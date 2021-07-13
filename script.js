@@ -1,3 +1,5 @@
+// setting variables
+
 var hour9 = $("#9");
 var hour10 = $("#10");
 var hour11 = $("#11");
@@ -24,3 +26,14 @@ function setPlanner() {
 }
 
 setPlanner();
+
+
+// save button function
+var saveButton = $(".saveButton");
+
+saveButton.on("click", function () {
+    var time = $(this).parent().attr("id");
+    var schedule = $(this).siblings(".schedule").val();
+
+    localStorage.setItem(time, schedule);
+});
