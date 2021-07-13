@@ -9,3 +9,18 @@ var hour4 = $("#4");
 var hour5 = $("#5");
 var time = moment();
 
+function setPlanner() {
+
+    $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
+
+    $(".time-block").each(function () {
+        var id = $(this).attr("id");
+        var schedule = localStorage.getItem(id);
+
+        if (schedule !== null) {
+            $(this).children(".schedule").val(schedule);
+        }
+    });
+}
+
+setPlanner();
