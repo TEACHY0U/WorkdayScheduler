@@ -46,7 +46,7 @@ function timeBlockColor() {
         var currentHour = parseInt($(this).attr("id"));
 
         if (currentHour > hour) {
-            $(this).addClass("future")
+            $(this).addClass("future");
 
         }
         else if (currentHour === hour) {
