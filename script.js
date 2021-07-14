@@ -37,3 +37,28 @@ saveButton.on("click", function () {
 
     localStorage.setItem(time, schedule);
 });
+
+// Past, Present , Future color function to time-block
+
+function timeBlockColor() {
+    hour = time.hours();
+    $(".time-block").each(function() {
+        var currentHour = parseInt($(this).attr("id"));
+
+        if (currentHour > hour) {
+            $(this).addClass("future")
+
+        }
+        else if (currentHour === hour) {
+            $(this).addClass("present");
+
+        }
+        else
+        {
+            $(this).addClass("past");
+        }
+    })
+
+}
+
+timeBlockColor();
